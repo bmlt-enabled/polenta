@@ -25,7 +25,7 @@ $poller_rows = $poller_ranked ? BmltEnabled\Poller\Tally::rank( $state['choices'
 $poller_extra = $poller_ranked && count( $poller_rows ) > BmltEnabled\Poller\Tally::TOP;
 ?>
 <section class="poller-results<?php echo $poller_ranked ? ' poller-results--ranked' : ''; ?>">
-	<h2><?php echo esc_html( __( 'Results', 'poller' ) ); ?></h2>
+	<h2><?php echo esc_html( __( 'Results', 'polenta' ) ); ?></h2>
 	<p class="poller-sr" id="poller-live"><?php echo esc_html( $summary ); ?></p>
 	<div class="poller-result-list">
 		<?php foreach ( $poller_rows as $poller_rank => $poller_choice ) : ?>
@@ -49,7 +49,7 @@ $poller_extra = $poller_ranked && count( $poller_rows ) > BmltEnabled\Poller\Tal
 						echo esc_html(
 							$poller_ranked ? sprintf(
 							/* translators: %s is how many dots this browser put on an item. */
-								__( 'Your dots: %s', 'poller' ),
+								__( 'Your dots: %s', 'polenta' ),
 								$poller_have
 							) : $your_vote
 						);

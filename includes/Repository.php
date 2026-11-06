@@ -322,7 +322,7 @@ class Repository {
 		}
 
 		// The title column holds 160 characters, so trim the name to fit the suffix.
-		$suffix = ' ' . __( '(copy)', 'poller' );
+		$suffix = ' ' . __( '(copy)', 'polenta' );
 		$room = 160 - ( function_exists( 'mb_strlen' ) ? mb_strlen( $suffix ) : strlen( $suffix ) );
 		$title = function_exists( 'mb_substr' ) ? mb_substr( $poll['title'], 0, $room ) : substr( $poll['title'], 0, $room );
 

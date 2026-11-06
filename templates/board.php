@@ -31,8 +31,8 @@ $poller_open = 'open' === $state['status'];
 		</div>
 		<div class="poller-qr" id="poller-qr"></div>
 	</header>
-	<p class="poller-closed" data-poller-closed<?php echo $poller_open ? ' hidden' : ''; ?>><?php echo esc_html( __( 'This poll is closed.', 'poller' ) ); ?></p>
-	<noscript><p class="poller-hint"><?php echo esc_html( __( 'Refresh the page to update the tally.', 'poller' ) ); ?></p></noscript>
+	<p class="poller-closed" data-poller-closed<?php echo $poller_open ? ' hidden' : ''; ?>><?php echo esc_html( __( 'This poll is closed.', 'polenta' ) ); ?></p>
+	<noscript><p class="poller-hint"><?php echo esc_html( __( 'Refresh the page to update the tally.', 'polenta' ) ); ?></p></noscript>
 	<?php require __DIR__ . '/results.php'; ?>
 </main>
 <script type="application/json" id="poller-state"><?php echo wp_json_encode( $client ); ?></script>

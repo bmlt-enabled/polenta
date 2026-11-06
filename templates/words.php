@@ -21,7 +21,7 @@ $poller_entries = is_array( $state['mine'] ) ? array_values( $state['mine'] ) : 
 			echo esc_html(
 				sprintf(
 				/* translators: %d is the position of the word box, starting at 1. */
-					__( 'Word %d', 'poller' ),
+					__( 'Word %d', 'polenta' ),
 					$poller_n + 1
 				)
 			);

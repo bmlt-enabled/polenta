@@ -57,7 +57,7 @@ class Presenter {
 			if ( '' === $label ) {
 				$label = sprintf(
 					/* translators: %d is the picture number on the ballot. */
-					__( 'Picture %d', 'poller' ),
+					__( 'Picture %d', 'polenta' ),
 					$index
 				);
 			}

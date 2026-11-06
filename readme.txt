@@ -1,5 +1,5 @@
-=== Poller ===
-Contributors: bmlt-enabled
+=== Polenta: Live Group Polls ===
+Contributors: bmltenabled, radius314
 Tags: poll, voting, qr-code, anonymous, word-cloud
 Requires at least: 6.4
 Tested up to: 7.1
@@ -20,9 +20,9 @@ Votes are anonymous. The plugin stores a salted hash of a random browser token a
 
 == Installation ==
 
-1. Upload the `poller` folder to `/wp-content/plugins/`.
-2. Activate Poller.
-3. Open Poller in the dashboard and add a poll.
+1. Upload the `polenta` folder to `/wp-content/plugins/`.
+2. Activate Polenta: Live Group Polls.
+3. Open Polenta in the dashboard and add a poll.
 4. Open the room display and let people scan or enter the code.
 
 == Changelog ==

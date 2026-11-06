@@ -495,7 +495,7 @@ function poller_preview_self_check(): void
             fwrite(STDERR, "FAIL: {$view} is missing the dot controls\n"); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_fwrite
             $failed++;
         }
-        if (!str_contains($html, 'Poller') && !str_ends_with($view, 'board')) {
+        if (!str_contains($html, 'Polenta') && !str_ends_with($view, 'board')) {
             fwrite(STDERR, "FAIL: {$view} did not render\n"); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_fwrite
             $failed++;
             continue;

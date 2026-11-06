@@ -51,7 +51,7 @@ class Test_Preview extends WP_UnitTestCase {
 		if ( str_ends_with( $view, 'board' ) ) {
 			$this->assertStringContainsString( 'K7MQ2P', $html, 'the board shows the code' );
 		} else {
-			$this->assertStringContainsString( 'Poller', $html, "{$view} renders the page chrome" );
+			$this->assertStringContainsString( 'Polenta', $html, "{$view} renders the page chrome" );
 		}
 	}
 }

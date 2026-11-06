@@ -78,8 +78,8 @@ jobs:
       - name: Upload plugin zip ⬆️
         uses: actions/upload-artifact@v7
         with:
-          name: poller
-          path: build/poller.zip
+          name: polenta
+          path: build/polenta.zip
           if-no-files-found: error
 
   deploy:
@@ -93,7 +93,7 @@ jobs:
       S3_BUCKET: archives.bmlt.app
       S3_KEY: poller
       BUILD_DIR: build
-      PLUGIN: poller
+      PLUGIN: polenta
     steps:
       - name: Check out code 🛒
         uses: actions/checkout@v7

@@ -1,5 +1,5 @@
 /*
- * Word cloud layout for Poller. No dependencies.
+ * Word cloud layout for Polenta. No dependencies.
  *
  * Words are placed biggest first along a spiral. Each word remembers its
  * spot, and the next redraw tries that spot first, so a live cloud grows in

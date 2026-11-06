@@ -1,5 +1,5 @@
 COMMIT := $(shell git rev-parse --short=8 HEAD)
-PLUGIN := poller
+PLUGIN := polenta
 BUILD_DIR := build
 ZIP_FILENAME := $(or $(ZIP_FILENAME),$(PLUGIN).zip)
 ZIP_FILE := $(BUILD_DIR)/$(ZIP_FILENAME)

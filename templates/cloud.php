@@ -25,7 +25,7 @@ $poller_yours = array_fill_keys( $state['mine_keys'], true );
 $poller_moderate = isset( $moderate ) && is_array( $moderate ) ? $moderate : null;
 ?>
 <section class="poller-results poller-results--ranked poller-results--cloud">
-	<h2><?php echo esc_html( __( 'Results', 'poller' ) ); ?></h2>
+	<h2><?php echo esc_html( __( 'Results', 'polenta' ) ); ?></h2>
 	<p class="poller-sr" id="poller-live"><?php echo esc_html( $summary ); ?></p>
 	<div class="poller-cloud" data-poller-cloud aria-hidden="true">
 		<?php foreach ( $poller_words as $poller_word ) : ?>
@@ -36,7 +36,7 @@ $poller_moderate = isset( $moderate ) && is_array( $moderate ) ? $moderate : nul
 			<span class="poller-cloud-word" style="font-size: <?php echo esc_attr( (string) round( $poller_size, 2 ) ); ?>em"><?php echo esc_html( $poller_word['text'] ); ?></span>
 		<?php endforeach; ?>
 	</div>
-	<p class="poller-cloud-empty" data-poller-empty<?php echo $poller_words ? ' hidden' : ''; ?>><?php echo esc_html( __( 'Words will show up here as people answer.', 'poller' ) ); ?></p>
+	<p class="poller-cloud-empty" data-poller-empty<?php echo $poller_words ? ' hidden' : ''; ?>><?php echo esc_html( __( 'Words will show up here as people answer.', 'polenta' ) ); ?></p>
 	<div class="poller-result-list" data-poller-words>
 		<?php foreach ( $poller_words as $poller_rank => $poller_word ) : ?>
 			<?php
@@ -48,7 +48,7 @@ $poller_moderate = isset( $moderate ) && is_array( $moderate ) ? $moderate : nul
 			<div class="<?php echo esc_attr( $poller_class ); ?>" data-word="<?php echo esc_attr( $poller_word['key'] ); ?>">
 				<div class="poller-result-label">
 					<span class="poller-result-name"><?php echo esc_html( $poller_word['text'] ); ?></span>
-					<span class="poller-yours"<?php echo isset( $poller_yours[ $poller_word['key'] ] ) ? '' : ' hidden'; ?>><?php echo esc_html( __( 'Your word', 'poller' ) ); ?></span>
+					<span class="poller-yours"<?php echo isset( $poller_yours[ $poller_word['key'] ] ) ? '' : ' hidden'; ?>><?php echo esc_html( __( 'Your word', 'polenta' ) ); ?></span>
 					<?php if ( $poller_moderate ) : ?>
 						<form class="poller-hide-word" method="post" action="<?php echo esc_url( $poller_moderate['url'] ); ?>">
 							<input type="hidden" name="action" value="poller_hide_word">
