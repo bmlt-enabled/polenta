@@ -48,4 +48,12 @@
         <exclude name="WordPress.Files.FileName.NotHyphenatedLowercase" />
         <exclude name="Universal.Arrays.DisallowShortArraySyntax"/>
     </rule>
+
+    <rule ref="WordPress.WP.I18n">
+        <properties>
+            <property name="text_domain" type="array">
+                <element value="polenta"/>
+            </property>
+        </properties>
+    </rule>
 </ruleset>

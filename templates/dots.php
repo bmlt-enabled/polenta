@@ -24,8 +24,8 @@ $poller_stack = $poller_per_choice > 1;
 </div>
 <?php if ( count( $state['choices'] ) >= 15 ) : ?>
 	<p class="poller-filter" data-poller-filter hidden>
-		<label class="poller-sr" for="poller-filter-input"><?php echo esc_html( __( 'Filter items', 'poller' ) ); ?></label>
-		<input type="search" id="poller-filter-input" placeholder="<?php echo esc_attr( __( 'Filter items', 'poller' ) ); ?>" autocomplete="off">
+		<label class="poller-sr" for="poller-filter-input"><?php echo esc_html( __( 'Filter items', 'polenta' ) ); ?></label>
+		<input type="search" id="poller-filter-input" placeholder="<?php echo esc_attr( __( 'Filter items', 'polenta' ) ); ?>" autocomplete="off">
 	</p>
 <?php endif; ?>
 <div class="poller-choices poller-choices--dots" role="group" aria-labelledby="poller-question">
@@ -64,7 +64,7 @@ $poller_stack = $poller_per_choice > 1;
 					echo esc_attr(
 						sprintf(
 						/* translators: %s is the item's label. */
-							__( 'Take a dot off %s', 'poller' ),
+							__( 'Take a dot off %s', 'polenta' ),
 							$poller_choice['label']
 						)
 					);
@@ -76,7 +76,7 @@ $poller_stack = $poller_per_choice > 1;
 					echo esc_attr(
 						sprintf(
 						/* translators: %s is the item's label. */
-							__( 'Put a dot on %s', 'poller' ),
+							__( 'Put a dot on %s', 'polenta' ),
 							$poller_choice['label']
 						)
 					);

@@ -1,4 +1,4 @@
-# Poller
+# Polenta: Live Group Polls
 
 A WordPress plugin for anonymous polls. Someone creates a poll, puts the code and QR code on a screen, and everyone votes from their phone. The tally updates live for the whole room.
 
@@ -31,7 +31,7 @@ The same browser can change its vote until the poll is closed; that updates the 
 
 ## Install
 
-Copy this folder to `wp-content/plugins/poller` and activate it. Activation creates the tables and the `/poller/` routes. In wp-admin, open **Poller** and add a poll, then open **Room display**.
+Copy this folder to `wp-content/plugins/polenta` and activate it. Activation creates the tables and the `/poller/` routes. In wp-admin, open **Polenta** and add a poll, then open **Room display**.
 
 Pretty permalinks are the normal way to the join page, the poll, and the room display. With plain permalinks, those same screens are still available from the links in wp-admin.
 

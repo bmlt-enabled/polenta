@@ -51,7 +51,7 @@ class Rest {
 		if ( ! $poll ) {
 			return new \WP_Error(
 				'poller_missing',
-				__( 'That code does not match a poll.', 'poller' ),
+				__( 'That code does not match a poll.', 'polenta' ),
 				[ 'status' => 404 ]
 			);
 		}
@@ -79,7 +79,7 @@ class Rest {
 		if ( ! wp_verify_nonce( $nonce, 'poller_vote_' . $code ) ) {
 			return new \WP_Error(
 				'poller_nonce',
-				__( 'Reload the page, then vote again.', 'poller' ),
+				__( 'Reload the page, then vote again.', 'polenta' ),
 				[ 'status' => 403 ]
 			);
 		}

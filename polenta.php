@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Poller
+ * Plugin Name: Polenta: Live Group Polls
  * Description: Anonymous polls people join with a code or a QR code, with a live tally everyone can see.
  * Version: 0.4.0
  * Requires at least: 6.4
@@ -8,7 +8,7 @@
  * Author: bmlt-enabled
  * License: GPLv2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: poller
+ * Text Domain: polenta
  * Author URI: https://bmlt.app
  *
  * @package Poller

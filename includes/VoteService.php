@@ -31,7 +31,7 @@ class VoteService {
 		if ( ! Codes::is_valid( $code ) ) {
 			return new \WP_Error(
 				'poller_missing',
-				__( 'That code does not match a poll.', 'poller' ),
+				__( 'That code does not match a poll.', 'polenta' ),
 				[ 'status' => 404 ]
 			);
 		}
@@ -40,14 +40,14 @@ class VoteService {
 		if ( ! $poll ) {
 			return new \WP_Error(
 				'poller_missing',
-				__( 'That code does not match a poll.', 'poller' ),
+				__( 'That code does not match a poll.', 'polenta' ),
 				[ 'status' => 404 ]
 			);
 		}
 		if ( 'open' !== $poll['status'] ) {
 			return new \WP_Error(
 				'poller_closed',
-				__( 'This poll is closed.', 'poller' ),
+				__( 'This poll is closed.', 'polenta' ),
 				[ 'status' => 409 ]
 			);
 		}
@@ -82,13 +82,13 @@ class VoteService {
 			if ( $e->getMessage() === 'closed' ) {
 				return new \WP_Error(
 					'poller_closed',
-					__( 'This poll is closed.', 'poller' ),
+					__( 'This poll is closed.', 'polenta' ),
 					[ 'status' => 409 ]
 				);
 			}
 			return new \WP_Error(
 				'poller_choice_invalid',
-				__( 'That choice is not on this poll.', 'poller' ),
+				__( 'That choice is not on this poll.', 'polenta' ),
 				[ 'status' => 400 ]
 			);
 		}
@@ -97,7 +97,7 @@ class VoteService {
 		if ( ! $fresh ) {
 			return new \WP_Error(
 				'poller_missing',
-				__( 'That code does not match a poll.', 'poller' ),
+				__( 'That code does not match a poll.', 'polenta' ),
 				[ 'status' => 404 ]
 			);
 		}
@@ -140,63 +140,63 @@ class VoteService {
 
 		switch ( $code ) {
 			case 'poller_nonce':
-				return __( 'That vote did not go through. Vote again.', 'poller' );
+				return __( 'That vote did not go through. Vote again.', 'polenta' );
 			case 'poller_closed':
-				return __( 'This poll is closed.', 'poller' );
+				return __( 'This poll is closed.', 'polenta' );
 			case 'poller_choice_one':
-				return __( 'Choose one option.', 'poller' );
+				return __( 'Choose one option.', 'polenta' );
 			case 'poller_choice_some':
-				return __( 'Choose at least one option.', 'poller' );
+				return __( 'Choose at least one option.', 'polenta' );
 			case 'poller_choice_invalid':
-				return __( 'That choice is not on this poll.', 'poller' );
+				return __( 'That choice is not on this poll.', 'polenta' );
 			case 'poller_choice':
-				return __( 'Choose an option to vote.', 'poller' );
+				return __( 'Choose an option to vote.', 'polenta' );
 			case 'poller_rate':
-				return __( 'Too many new votes from this network just now. Wait a moment and try again.', 'poller' );
+				return __( 'Too many new votes from this network just now. Wait a moment and try again.', 'polenta' );
 			case 'poller_missing':
-				return __( 'That code does not match a poll.', 'poller' );
+				return __( 'That code does not match a poll.', 'polenta' );
 			case 'poller_dots_none':
-				return __( 'Place at least one dot.', 'poller' );
+				return __( 'Place at least one dot.', 'polenta' );
 			case 'poller_dots_budget':
 				return sprintf(
 					/* translators: %d is how many dots each voter has. */
-					_n( 'Use no more than %d dot.', 'Use no more than %d dots.', $budget, 'poller' ),
+					_n( 'Use no more than %d dot.', 'Use no more than %d dots.', $budget, 'polenta' ),
 					$budget
 				);
 			case 'poller_dots_per_choice':
 				return sprintf(
 					/* translators: %d is the most dots allowed on one item. */
-					_n( 'No more than %d dot on one item.', 'No more than %d dots on one item.', $per_choice, 'poller' ),
+					_n( 'No more than %d dot on one item.', 'No more than %d dots on one item.', $per_choice, 'polenta' ),
 					$per_choice
 				);
 			case 'poller_dots_spend_all':
 				return sprintf(
 					/* translators: %d is how many dots each voter has. */
-					_n( 'Use your %d dot.', 'Use all %d dots.', $budget, 'poller' ),
+					_n( 'Use your %d dot.', 'Use all %d dots.', $budget, 'polenta' ),
 					$budget
 				);
 			case 'poller_words_none':
-				return __( 'Enter at least one word.', 'poller' );
+				return __( 'Enter at least one word.', 'polenta' );
 			case 'poller_words_limit':
 				return sprintf(
 					/* translators: %d is how many words each voter can enter. */
-					_n( 'Enter no more than %d word.', 'Enter no more than %d words.', $budget, 'poller' ),
+					_n( 'Enter no more than %d word.', 'Enter no more than %d words.', $budget, 'polenta' ),
 					$budget
 				);
 			case 'poller_words_long':
 				return sprintf(
 					/* translators: %d is the most characters in one entry. */
-					__( 'Keep each entry to %d characters or fewer.', 'poller' ),
+					__( 'Keep each entry to %d characters or fewer.', 'polenta' ),
 					BallotRules::WORD_LENGTH
 				);
 			case 'poller_words_phrase':
 				return sprintf(
 					/* translators: %d is the most words in one entry. */
-					__( 'Keep each entry to %d words or fewer.', 'poller' ),
+					__( 'Keep each entry to %d words or fewer.', 'polenta' ),
 					BallotRules::WORD_PHRASE
 				);
 			case 'poller_words_invalid':
-				return __( 'Those words could not be read. Try again.', 'poller' );
+				return __( 'Those words could not be read. Try again.', 'polenta' );
 		}
 		return null;
 	}

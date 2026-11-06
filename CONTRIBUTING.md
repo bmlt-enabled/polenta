@@ -1,14 +1,14 @@
-# Contributing to Poller
+# Contributing to Polenta
 
 ## How to Contribute
 
-To contribute to Poller:
+To contribute to Polenta:
 
 1. Fork the repository
 2. Make your changes
 3. Send a pull request to the main branch
 
-Take a look at the [issues](https://github.com/bmlt-enabled/poller/issues) for bugs that you might be able to help fix.
+Take a look at the [issues](https://github.com/bmlt-enabled/polenta/issues) for bugs that you might be able to help fix.
 
 Once your pull request is merged, it will be released in the next version.
 
@@ -23,7 +23,7 @@ To get things going in your local environment:
 
 2. Set up your WordPress installation and remember your admin password.
 
-3. Once it's running, log in to the admin panel and activate the "Poller" plugin.
+3. Once it's running, log in to the admin panel and activate the "Polenta: Live Group Polls" plugin.
 
 4. You can now make edits to the plugin and changes will take effect instantly.
 
@@ -112,13 +112,13 @@ Create an installable zip from the current commit:
 make build
 ```
 
-This writes `build/poller.zip` with a top-level `poller/` folder, ready to upload from
+This writes `build/polenta.zip` with a top-level `polenta/` folder, ready to upload from
 **Plugins → Add New → Upload Plugin**. Development files (tests, Docker, CI, and tooling)
 are kept out of the zip via `.gitattributes`.
 
 ## Release Tagging
 
-Pushing a version tag such as `0.1.0` runs lint and tests, builds `poller-<tag>.zip`, and
+Pushing a version tag such as `0.1.0` runs lint and tests, builds `polenta-<tag>.zip`, and
 publishes a GitHub release. The tag should match a heading in the `readme.txt` changelog.
 
 - If a release is tagged with `beta`, it is published as a GitHub pre-release.

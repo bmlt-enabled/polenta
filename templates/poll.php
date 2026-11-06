@@ -28,9 +28,9 @@ $poller_budget = (int) $state['budget'];
 $poller_per_choice = (int) $state['per_choice'];
 ?>
 <header class="poller-top">
-	<a class="poller-mark" href="<?php echo esc_url( $join_url ); ?>">Poller</a>
+	<a class="poller-mark" href="<?php echo esc_url( $join_url ); ?>">Polenta</a>
 	<?php if ( $can_manage ) : ?>
-		<a class="poller-text-link" href="<?php echo esc_url( $state['urls']['board'] ); ?>"><?php echo esc_html( __( 'Room display', 'poller' ) ); ?></a>
+		<a class="poller-text-link" href="<?php echo esc_url( $state['urls']['board'] ); ?>"><?php echo esc_html( __( 'Room display', 'polenta' ) ); ?></a>
 	<?php endif; ?>
 </header>
 <main class="poller-sheet">
@@ -41,7 +41,7 @@ $poller_per_choice = (int) $state['per_choice'];
 	<?php endif; ?>
 	<h1 id="poller-question"><?php echo esc_html( $state['question'] ); ?></h1>
 	<?php if ( $poller_multiple && $poller_open ) : ?>
-		<p class="poller-hint"><?php echo esc_html( __( 'Choose as many as you like.', 'poller' ) ); ?></p>
+		<p class="poller-hint"><?php echo esc_html( __( 'Choose as many as you like.', 'polenta' ) ); ?></p>
 	<?php endif; ?>
 	<?php if ( $poller_dots && $poller_open ) : ?>
 		<p class="poller-hint">
@@ -49,7 +49,7 @@ $poller_per_choice = (int) $state['per_choice'];
 			$poller_rules = [
 				sprintf(
 					/* translators: %d is how many dots each voter has. */
-					_n( 'You have %d dot to place.', 'You have %d dots to spread across the items.', $poller_budget, 'poller' ),
+					_n( 'You have %d dot to place.', 'You have %d dots to spread across the items.', $poller_budget, 'polenta' ),
 					$poller_budget
 				),
 			];
@@ -57,13 +57,13 @@ $poller_per_choice = (int) $state['per_choice'];
 				$poller_rules[] = $poller_per_choice > 1
 					? sprintf(
 						/* translators: %d is the most dots allowed on one item. */
-						__( 'Up to %d on one item.', 'poller' ),
+						__( 'Up to %d on one item.', 'polenta' ),
 						$poller_per_choice
 					)
-					: __( 'One dot per item.', 'poller' );
+					: __( 'One dot per item.', 'polenta' );
 			}
 			if ( ! empty( $state['spend_all'] ) && $poller_budget > 1 ) {
-				$poller_rules[] = __( 'Use every dot.', 'poller' );
+				$poller_rules[] = __( 'Use every dot.', 'polenta' );
 			}
 			echo esc_html( implode( ' ', $poller_rules ) );
 			?>
@@ -74,19 +74,18 @@ $poller_per_choice = (int) $state['per_choice'];
 			<?php
 			echo esc_html(
 				sprintf(
-				/* translators: %d is how many words each voter can enter. */
-					// phpcs:ignore WordPress.WP.I18n.MissingSingularPlaceholder -- Singular form intentionally omits the count (it is always one).
-					_n( 'Enter a word or a short phrase.', 'Enter up to %d words or short phrases.', $poller_budget, 'poller' ),
+					/* translators: %d is how many words each voter can enter. */
+					_n( 'Enter a word or a short phrase.', 'Enter up to %d words or short phrases.', $poller_budget, 'polenta' ), // phpcs:ignore WordPress.WP.I18n.MissingSingularPlaceholder -- Singular form intentionally omits the count (it is always one).
 					$poller_budget
 				)
 			);
 			echo ' ';
-			echo esc_html( __( 'Everyone sees them together, never who wrote what.', 'poller' ) );
+			echo esc_html( __( 'Everyone sees them together, never who wrote what.', 'polenta' ) );
 			?>
 		</p>
 	<?php endif; ?>
 	<p class="poller-error" role="alert" data-poller-error<?php echo '' === $error ? ' hidden' : ''; ?>><?php echo esc_html( $error ); ?></p>
-	<p class="poller-closed" data-poller-closed<?php echo $poller_open ? ' hidden' : ''; ?>><?php echo esc_html( __( 'This poll is closed.', 'poller' ) ); ?></p>
+	<p class="poller-closed" data-poller-closed<?php echo $poller_open ? ' hidden' : ''; ?>><?php echo esc_html( __( 'This poll is closed.', 'polenta' ) ); ?></p>
 	<form id="poller-vote" method="post" action="<?php echo esc_url( $post_url ); ?>"<?php echo $poller_open ? '' : ' hidden'; ?>>
 		<input type="hidden" name="action" value="poller_vote">
 		<input type="hidden" name="code" value="<?php echo esc_attr( $state['code'] ); ?>">
@@ -109,9 +108,9 @@ $poller_per_choice = (int) $state['per_choice'];
 			<?php endforeach; ?>
 		</div>
 		<?php endif; ?>
-		<button class="poller-submit" type="submit"><?php echo esc_html( $poller_voted ? __( 'Update vote', 'poller' ) : __( 'Vote', 'poller' ) ); ?></button>
+		<button class="poller-submit" type="submit"><?php echo esc_html( $poller_voted ? __( 'Update vote', 'polenta' ) : __( 'Vote', 'polenta' ) ); ?></button>
 	</form>
-	<noscript><p class="poller-hint"><?php echo esc_html( __( 'You can vote. Live updates need JavaScript.', 'poller' ) ); ?></p></noscript>
+	<noscript><p class="poller-hint"><?php echo esc_html( __( 'You can vote. Live updates need JavaScript.', 'polenta' ) ); ?></p></noscript>
 	<?php require __DIR__ . '/results.php'; ?>
 </main>
 <script type="application/json" id="poller-state"><?php echo wp_json_encode( $client ); ?></script>

@@ -1,6 +1,6 @@
 <?php
 /**
- * PHPUnit bootstrap file for Poller plugin tests.
+ * PHPUnit bootstrap file for Polenta plugin tests.
  *
  * Uses wp-phpunit/wp-phpunit (installed via Composer) as the test library.
  * WordPress core must be downloaded to WP_CORE_DIR (default: /tmp/wordpress).
@@ -23,7 +23,7 @@ require_once __DIR__ . '/helpers.php';
  * Load the plugin being tested.
  */
 function poller_tests_manually_load_plugin() {
-	require dirname( __DIR__ ) . '/poller.php';
+	require dirname( __DIR__ ) . '/polenta.php';
 }
 tests_add_filter( 'muplugins_loaded', 'poller_tests_manually_load_plugin' );
 

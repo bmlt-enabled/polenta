@@ -8,7 +8,7 @@
 	convertWarningsToExceptions="false"
 >
 	<testsuites>
-		<testsuite name="poller">
+		<testsuite name="polenta">
 			<directory suffix=".php">./tests/</directory>
 		</testsuite>
 	</testsuites>

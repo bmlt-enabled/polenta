@@ -74,7 +74,7 @@ jobs:
 
       - name: Build plugin zip 📦
         run: |
-          export ZIP_FILENAME=poller-${GITHUB_REF_NAME}.zip
+          export ZIP_FILENAME=polenta-${GITHUB_REF_NAME}.zip
           make build
           echo "ARTIFACT_PATH=build/${ZIP_FILENAME}" >> "$GITHUB_ENV"
 

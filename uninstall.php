@@ -1,6 +1,6 @@
 <?php
 /**
- * Remove Poller tables when the plugin is deleted.
+ * Remove Polenta tables when the plugin is deleted.
  *
  * @package Poller
  */

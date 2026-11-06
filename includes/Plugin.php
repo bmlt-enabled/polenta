@@ -82,7 +82,7 @@ class Plugin {
 		$url = admin_url( 'admin.php?page=poller' );
 		array_unshift(
 			$links,
-			'<a href="' . esc_url( $url ) . '">' . esc_html__( 'Polls', 'poller' ) . '</a>'
+			'<a href="' . esc_url( $url ) . '">' . esc_html__( 'Polls', 'polenta' ) . '</a>'
 		);
 		return $links;
 	}

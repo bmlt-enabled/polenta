@@ -111,11 +111,11 @@ class Frontend {
 			$code_value = sanitize_text_field( wp_unslash( $_GET['code'] ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 			$raw = Codes::normalize( $code_value );
 			if ( Codes::has_ambiguous( $raw ) ) {
-				$error = __( 'That code has a character that is not used. Codes leave out 0, 1, I, L, and O.', 'poller' );
+				$error = __( 'That code has a character that is not used. Codes leave out 0, 1, I, L, and O.', 'polenta' );
 			} elseif ( ! Codes::is_valid( $raw ) ) {
-				$error = __( 'Enter the 6-character code from the room.', 'poller' );
+				$error = __( 'Enter the 6-character code from the room.', 'polenta' );
 			} elseif ( $this->repo->get_poll_by_code( $raw ) === null ) {
-				$error = __( 'That code does not match a poll.', 'poller' );
+				$error = __( 'That code does not match a poll.', 'polenta' );
 			} else {
 				wp_safe_redirect( Plugin::poll_url( $raw ) );
 				exit;
@@ -130,7 +130,7 @@ class Frontend {
 				'join_url' => Plugin::join_url(),
 			]
 		);
-		$this->send( __( 'Enter the code', 'poller' ), 'poller-body poller-body--join', $body, 200, false );
+		$this->send( __( 'Enter the code', 'polenta' ), 'poller-body poller-body--join', $body, 200, false );
 	}
 
 	private function render_poll( string $view ): void {
@@ -143,7 +143,7 @@ class Frontend {
 					'join_url' => Plugin::join_url(),
 				]
 			);
-			$this->send( __( 'Poll not found', 'poller' ), 'poller-body', $body, 404, false );
+			$this->send( __( 'Poll not found', 'polenta' ), 'poller-body', $body, 404, false );
 			return;
 		}
 
@@ -161,9 +161,9 @@ class Frontend {
 				'url' => admin_url( 'admin-post.php' ),
 				'poll' => (int) $poll['id'],
 				'nonce' => wp_create_nonce( 'poller_hide_word_' . (int) $poll['id'] ),
-				'hide' => __( 'Hide', 'poller' ),
+				'hide' => __( 'Hide', 'polenta' ),
 				/* translators: %s is a word in the word cloud. */
-				'hideLabel' => __( 'Hide "%s" from the results', 'poller' ),
+				'hideLabel' => __( 'Hide "%s" from the results', 'polenta' ),
 			];
 		}
 
@@ -184,7 +184,7 @@ class Frontend {
 				'can_manage' => $can_manage,
 				'total_label' => self::total_label( (int) $state['ballots'], $state ),
 				'summary' => $this->summary( $state ),
-				'your_vote' => __( 'Your vote', 'poller' ),
+				'your_vote' => __( 'Your vote', 'polenta' ),
 			]
 		);
 
@@ -202,47 +202,47 @@ class Frontend {
 		$state['rest'] = rest_url( 'poller/v1/polls/' . $code );
 		$state['restVotes'] = rest_url( 'poller/v1/polls/' . $code . '/votes' );
 		$state['i18n'] = [
-			'oneVote' => __( '1 vote', 'poller' ),
+			'oneVote' => __( '1 vote', 'polenta' ),
 			/* translators: %s is the number of ballots. */
-			'manyVotes' => __( '%s votes', 'poller' ),
-			'noVotes' => __( 'No votes yet', 'poller' ),
-			'yourVote' => __( 'Your vote', 'poller' ),
-			'vote' => __( 'Vote', 'poller' ),
-			'updateVote' => __( 'Update vote', 'poller' ),
-			'saving' => __( 'Saving vote', 'poller' ),
-			'paused' => __( 'Live results paused. Still showing the last update.', 'poller' ),
-			'chooseOne' => __( 'Choose one option.', 'poller' ),
-			'chooseSome' => __( 'Choose at least one option.', 'poller' ),
-			'voteFailed' => __( 'The vote did not save. Try again.', 'poller' ),
-			'qr' => __( 'QR code that opens this poll', 'poller' ),
+			'manyVotes' => __( '%s votes', 'polenta' ),
+			'noVotes' => __( 'No votes yet', 'polenta' ),
+			'yourVote' => __( 'Your vote', 'polenta' ),
+			'vote' => __( 'Vote', 'polenta' ),
+			'updateVote' => __( 'Update vote', 'polenta' ),
+			'saving' => __( 'Saving vote', 'polenta' ),
+			'paused' => __( 'Live results paused. Still showing the last update.', 'polenta' ),
+			'chooseOne' => __( 'Choose one option.', 'polenta' ),
+			'chooseSome' => __( 'Choose at least one option.', 'polenta' ),
+			'voteFailed' => __( 'The vote did not save. Try again.', 'polenta' ),
+			'qr' => __( 'QR code that opens this poll', 'polenta' ),
 		];
 		if ( 'dots' === $state['selection'] ) {
 			$budget = (int) $state['budget'];
 			$state['i18n'] += [
 				/* translators: 1: dots not placed yet, 2: dots each voter has. */
-				'dotsLeft' => _n( '%1$s of %2$s dot left', '%1$s of %2$s dots left', $budget, 'poller' ),
-				'toPlaceOne' => __( '1 dot left to place', 'poller' ),
+				'dotsLeft' => _n( '%1$s of %2$s dot left', '%1$s of %2$s dots left', $budget, 'polenta' ),
+				'toPlaceOne' => __( '1 dot left to place', 'polenta' ),
 				/* translators: %s is the number of dots not placed yet. */
-				'toPlaceMany' => __( '%s dots left to place', 'poller' ),
-				'placeDot' => __( 'Place a dot to vote', 'poller' ),
+				'toPlaceMany' => __( '%s dots left to place', 'polenta' ),
+				'placeDot' => __( 'Place a dot to vote', 'polenta' ),
 				/* translators: %s is how many dots this browser put on an item. */
-				'yourDots' => __( 'Your dots: %s', 'poller' ),
-				'oneDot' => __( '1 dot', 'poller' ),
+				'yourDots' => __( 'Your dots: %s', 'polenta' ),
+				'oneDot' => __( '1 dot', 'polenta' ),
 				/* translators: %s is the number of dots. */
-				'manyDots' => __( '%s dots', 'poller' ),
+				'manyDots' => __( '%s dots', 'polenta' ),
 				/* translators: %s is the number of items. */
-				'showAll' => __( 'Show all %s', 'poller' ),
-				'showTop' => __( 'Show the top 10', 'poller' ),
+				'showAll' => __( 'Show all %s', 'polenta' ),
+				'showTop' => __( 'Show the top 10', 'polenta' ),
 			];
 		}
 		if ( 'words' === $state['selection'] ) {
 			$state['i18n'] += [
-				'enterWord' => __( 'Enter at least one word.', 'poller' ),
-				'yourWord' => __( 'Your word', 'poller' ),
-				'noWords' => __( 'Words will show up here as people answer.', 'poller' ),
+				'enterWord' => __( 'Enter at least one word.', 'polenta' ),
+				'yourWord' => __( 'Your word', 'polenta' ),
+				'noWords' => __( 'Words will show up here as people answer.', 'polenta' ),
 				/* translators: %s is the number of words. */
-				'showAll' => __( 'Show all %s', 'poller' ),
-				'showTop' => __( 'Show the top 10', 'poller' ),
+				'showAll' => __( 'Show all %s', 'polenta' ),
+				'showTop' => __( 'Show the top 10', 'polenta' ),
 			];
 		}
 		return $state;
@@ -278,9 +278,9 @@ class Frontend {
 				$parts[] = $choice['label'] . ' ' . $votes;
 				continue;
 			}
-			$parts[] = $choice['label'] . ' ' . ( 1 === $votes ? __( '1 dot', 'poller' ) : sprintf(
+			$parts[] = $choice['label'] . ' ' . ( 1 === $votes ? __( '1 dot', 'polenta' ) : sprintf(
 				/* translators: %s is the number of dots. */
-				__( '%s dots', 'poller' ),
+				__( '%s dots', 'polenta' ),
 				number_format_i18n( $votes )
 			) );
 		}
@@ -292,14 +292,14 @@ class Frontend {
 	 */
 	public static function total_label( int $ballots, array $state = [] ): string {
 		if ( 0 === $ballots ) {
-			return __( 'No votes yet', 'poller' );
+			return __( 'No votes yet', 'polenta' );
 		}
 		if ( 1 === $ballots ) {
-			$label = __( '1 vote', 'poller' );
+			$label = __( '1 vote', 'polenta' );
 		} else {
 			$label = sprintf(
 				/* translators: %s is the number of ballots. */
-				__( '%s votes', 'poller' ),
+				__( '%s votes', 'polenta' ),
 				number_format_i18n( $ballots )
 			);
 		}
@@ -307,9 +307,9 @@ class Frontend {
 			return $label;
 		}
 		$dots = (int) $state['dots'];
-		$dots_label = 1 === $dots ? __( '1 dot', 'poller' ) : sprintf(
+		$dots_label = 1 === $dots ? __( '1 dot', 'polenta' ) : sprintf(
 			/* translators: %s is the number of dots. */
-			__( '%s dots', 'poller' ),
+			__( '%s dots', 'polenta' ),
 			number_format_i18n( $dots )
 		);
 		return $label . ' · ' . $dots_label;
