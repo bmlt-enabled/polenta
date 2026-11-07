@@ -91,7 +91,7 @@ jobs:
       contents: read
     env:
       S3_BUCKET: archives.bmlt.app
-      S3_KEY: poller
+      S3_KEY: polenta
       BUILD_DIR: build
       PLUGIN: polenta
     steps:
