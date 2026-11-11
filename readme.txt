@@ -4,7 +4,7 @@ Tags: poll, voting, qr-code, anonymous, word-cloud
 Requires at least: 6.4
 Tested up to: 7.1
 Requires PHP: 8.0
-Stable tag: 0.4.0
+Stable tag: 0.5.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,11 @@ Votes are anonymous. The plugin stores a salted hash of a random browser token a
 4. Open the room display and let people scan or enter the code.
 
 == Changelog ==
+
+= 0.5.0 =
+* Renamed to Polenta: Live Group Polls.
+* Updated the Contributors list.
+* First release on the WordPress.org Plugin Directory.
 
 = 0.4.0 =
 * Reset votes starts a new round on the same poll instead of deleting answers. The code, QR code and choices stay, the live tally starts empty, and earlier rounds' results are listed under Past rounds on the poll's edit screen.

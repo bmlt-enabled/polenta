@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Polenta: Live Group Polls
  * Description: Anonymous polls people join with a code or a QR code, with a live tally everyone can see.
- * Version: 0.4.0
+ * Version: 0.5.0
  * Requires at least: 6.4
  * Requires PHP: 8.0
  * Author: bmlt-enabled
@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'POLLER_VERSION', '0.4.0' );
+define( 'POLLER_VERSION', '0.5.0' );
 define( 'POLLER_FILE', __FILE__ );
 define( 'POLLER_DIR', plugin_dir_path( __FILE__ ) );
 define( 'POLLER_URL', plugin_dir_url( __FILE__ ) );
